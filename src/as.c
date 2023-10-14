@@ -32,38 +32,38 @@ int main(int argc, char **argv)
 	initialize();
 	while ( (j<argc) && (*argv[j] != '-') ) {
 		j++;
-		N_files = j-1;
-		if (j < argc ) {
-			argv[j]++;
-			while (j<argc) {
-				for (pc = argv[j]; *pc != 0; pc++) {
-					*pc = tolower( (unsigned char)*pc );
+	}
+	N_files = j-1;
+	if (j < argc ) {
+		argv[j]++;
+		while (j<argc) {
+			for (pc = argv[j]; *pc != 0; pc++) {
+				*pc = tolower( (unsigned char)*pc );
 
-					if (strcmp(argv[j],"l")==0)
-						Lflag = 1;
-					else if (strcmp(argv[j],"nol")==0)
-						Lflag = 0;
-					else if (strcmp(argv[j],"c")==0)
-						Cflag = 1;
-					else if (strcmp(argv[j],"noc")==0)
-						Cflag = 0;
-					else if (strcmp(argv[j],"s")==0)
-						Sflag = 1;
-					else if (strcmp(argv[j],"cre")==0)
-						Rflag = 1;
-					else if (strcmp(argv[j],"bin")==0)
-						Bflag = 1;
-					else if (strcmp(argv[j],"s19")==0)
-						Oflag = 1;
-					else if (strcmp(argv[j],"w")==0)
-						Wflag = 1;
-					else if (strcmp(argv[j],"now")==0)
-						Wflag = 0;
-					else
-						fatal("Unknown option");
-				}
-				j++;
+				if (strcmp(argv[j],"l")==0)
+					Lflag = 1;
+				else if (strcmp(argv[j],"nol")==0)
+					Lflag = 0;
+				else if (strcmp(argv[j],"c")==0)
+					Cflag = 1;
+				else if (strcmp(argv[j],"noc")==0)
+					Cflag = 0;
+				else if (strcmp(argv[j],"s")==0)
+					Sflag = 1;
+				else if (strcmp(argv[j],"cre")==0)
+					Rflag = 1;
+				else if (strcmp(argv[j],"bin")==0)
+					Bflag = 1;
+				else if (strcmp(argv[j],"s19")==0)
+					Oflag = 1;
+				else if (strcmp(argv[j],"w")==0)
+					Wflag = 1;
+				else if (strcmp(argv[j],"now")==0)
+					Wflag = 0;
+				else
+					fatal("Unknown option");
 			}
+			j++;
 		}
 	}
 	root = NULL;
